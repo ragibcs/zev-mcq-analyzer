@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment / secrets
+.env
+backend/.env
+*.env.local
+
+# Node / extension
+node_modules/
+extension/dist/
+extension/.vitest-cache/
+extension/coverage/
+
+# Build artifacts
+*.zip
+*.crx
+
+# Logs
+*.log
+uvicorn.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

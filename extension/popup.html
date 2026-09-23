@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jev MCQ Analyzer</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="topbar">
+    <img src="icons/icon32.png" alt="" width="20" height="20" />
+    <h1>Jev MCQ Analyzer</h1>
+    <button id="settings-btn" class="icon-btn" title="Settings" aria-label="Settings">⚙</button>
+  </header>
+
+  <main id="main-view">
+    <section class="field">
+      <label for="question">Question</label>
+      <textarea id="question" rows="4" placeholder="Paste or extract a question…"></textarea>
+    </section>
+
+    <section class="field">
+      <label for="options">Options (one per line)</label>
+      <textarea id="options" rows="5" placeholder="A. First option&#10;B. Second option&#10;…"></textarea>
+    </section>
+
+    <div class="actions">
+      <button id="extract-btn" class="btn secondary">Extract from page</button>
+      <button id="analyze-btn" class="btn primary">Analyze</button>
+    </div>
+
+    <section id="result" class="result hidden">
+      <div class="verdict">
+        <span class="verdict-label">Prediction</span>
+        <span id="prediction" class="verdict-value">—</span>
+        <span id="confidence" class="confidence">—%</span>
+      </div>
+      <div id="distribution" class="distribution"></div>
+      <button id="explain-btn" class="btn secondary">Why? (explain)</button>
+      <div id="explanation" class="explanation hidden"></div>
+    </section>
+
+    <p id="status" class="status" role="status"></p>
+  </main>
+
+  <section id="settings-view" class="hidden">
+    <h2>Settings</h2>
+    <section class="field">
+      <label for="base-url">Backend URL</label>
+      <input id="base-url" type="url" placeholder="http://localhost:8000" />
+    </section>
+    <section class="field">
+      <label for="api-key">API key (optional)</label>
+      <input id="api-key" type="password" placeholder="X-API-Key" />
+    </section>
+    <div class="actions">
+      <button id="back-btn" class="btn secondary">Back</button>
+      <button id="save-btn" class="btn primary">Save</button>
+    </div>
+    <p id="settings-status" class="status" role="status"></p>
+  </section>
+
+  <template id="bar-row">
+    <div class="bar-row">
+      <span class="bar-label"></span>
+      <div class="bar-track"><div class="bar-fill"></div></div>
+      <span class="bar-pct"></span>
+    </div>
+  </template>
+
+  <script src="popup.js"></script>
+</body>
+</html>

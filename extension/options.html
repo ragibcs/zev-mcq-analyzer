@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jev MCQ Analyzer — Options</title>
+  <style>
+    body { font: 14px/1.6 system-ui, sans-serif; max-width: 480px; margin: 40px auto; padding: 0 16px; }
+    label { display: block; margin: 16px 0 4px; font-weight: 600; }
+    input { width: 100%; padding: 8px; box-sizing: border-box; }
+    button { margin-top: 16px; padding: 8px 16px; }
+    #status { color: #2a7; margin-left: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Jev MCQ Analyzer</h1>
+  <p>Configure the backend connection.</p>
+  <label for="base-url">Backend URL</label>
+  <input id="base-url" type="url" placeholder="http://localhost:8000" />
+  <label for="api-key">API key (optional)</label>
+  <input id="api-key" type="password" placeholder="X-API-Key" />
+  <button id="save">Save</button><span id="status"></span>
+
+  <script src="options.js"></script>
+</body>
+</html>
